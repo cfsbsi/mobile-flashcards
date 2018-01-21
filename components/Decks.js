@@ -5,7 +5,7 @@ import Deck from './Deck'
 export default function Decks() {
     return (
         <View>
-            <Deck></Deck>
+            <Deck title="udacitycards" quantity={1}></Deck>
         </View>
     )
 }

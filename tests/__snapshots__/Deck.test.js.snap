@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "black",
+        "borderBottomWidth": 2,
+        "paddingBottom": 20,
+        "paddingTop": 20,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontSize": 30,
+          "fontWeight": "bold",
+        },
+        undefined,
+      ]
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+     
+    cards
+  </Text>
+</View>
+`;

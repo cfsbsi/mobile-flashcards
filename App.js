@@ -1,7 +1,8 @@
-import React from 'react';
-import {View, StatusBar} from 'react-native';
+import React from 'react'
+import {View, StatusBar} from 'react-native'
 import {TabNavigator} from 'react-navigation'
 import Decks from './components/Decks'
+import AddDeck from './components/AddDeck'
 import {Constants} from 'expo'
 import {black} from './utils/colors'
 
@@ -18,6 +19,11 @@ const Tabs = TabNavigator({
         screen: Decks,
         navigationOptions: {
             tabBarLabel: 'DECKS'
+        }
+    }, addDeck: {
+        screen: AddDeck,
+        navigationOptions: {
+            tabBarLabel: 'ADD DECK'
         }
     },
 }, {

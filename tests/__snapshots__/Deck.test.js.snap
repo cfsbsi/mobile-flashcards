@@ -19,6 +19,7 @@ exports[`renders correctly 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    onPress={[Function]}
     style={
       Array [
         Object {
@@ -34,8 +35,7 @@ exports[`renders correctly 1`] = `
     allowFontScaling={true}
     ellipsizeMode="tail"
   >
-     
-    cards
+    1 card
   </Text>
 </View>
 `;

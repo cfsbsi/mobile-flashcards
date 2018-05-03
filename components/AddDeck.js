@@ -59,7 +59,6 @@ const TextButton = styled.Text`
 `
 
 const TouchableOpacityStyled = styled.TouchableOpacity`
-    align-items: center;
     background-color: black;
     border-radius: 7;
     margin-top: 80;

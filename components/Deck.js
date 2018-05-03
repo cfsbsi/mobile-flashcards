@@ -1,13 +1,16 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {View, Text} from 'react-native'
 import styled from 'styled-components/native';
 
 
-export default function Deck({title, quantity}) {
+export default function Deck(props) {
+    const {quantity, title} = props;
+    const cardQuantitiesLiteral = `${quantity} ${quantity===1?'card':'cards'}`;
+
     return (
         <DeckStyled>
-            <Title>{title}</Title>
-            <Text>{quantity} {quantity==1?'card':'cards'}</Text>
+            <Title onPress={() => props.navigation.navigate('SingleViewDeck', {title: title, subtitle: cardQuantitiesLiteral})} >{title}</Title>
+            <Text>{cardQuantitiesLiteral}</Text>
         </DeckStyled>
     )
 }

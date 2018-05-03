@@ -1,8 +1,9 @@
 import React from 'react'
 import {View, StatusBar} from 'react-native'
-import {TabNavigator} from 'react-navigation'
+import {TabNavigator, StackNavigator} from 'react-navigation'
 import Decks from './components/Decks'
 import AddDeck from './components/AddDeck'
+import SingleViewDeck from './components/SingleViewDeck'
 import {Constants} from 'expo'
 import {black} from './utils/colors'
 
@@ -45,6 +46,15 @@ const Tabs = TabNavigator({
             fontSize: 20,
         },
     }
+});
+
+const MainNavigator = StackNavigator({
+    Home: {
+        screen: Tabs,
+    },
+    SingleViewDeck: {
+        screen: SingleViewDeck,
+    },
 })
 
 export default class App extends React.Component {
@@ -52,7 +62,7 @@ export default class App extends React.Component {
         return (
             <View style={{flex: 1}}>
                 <AppStatusBar backgroundColor={black} barStyle="light-content"/>
-                <Tabs/>
+                <MainNavigator/>
             </View>
         );
     }

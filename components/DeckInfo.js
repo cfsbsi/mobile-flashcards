@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native'
 import styled from "styled-components/native/index";
 
-export default function SingleViewDeck(props) {
+export default function DeckInfo(props) {
     return (
         <ViewStyled>
             <Title>{props.navigation.state.params.title}</Title>

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {View, Text, TextInput, TouchableOpacity} from 'react-native'
 import styled from "styled-components/native/index";
 
-class AddDeck extends Component {
+class DeckCreation extends Component {
 
     constructor(props) {
         super(props);
@@ -65,4 +65,4 @@ const TouchableOpacityStyled = styled.TouchableOpacity`
     padding: 10px 15px;
 `
 
-export default AddDeck
+export default DeckCreation

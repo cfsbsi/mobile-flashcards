@@ -1,19 +1,11 @@
 import React from 'react'
-import {View, StatusBar} from 'react-native'
+import {View} from 'react-native'
 import {TabNavigator, StackNavigator} from 'react-navigation'
 import Decks from './components/Decks'
-import AddDeck from './components/AddDeck'
-import SingleViewDeck from './components/SingleViewDeck'
-import {Constants} from 'expo'
-import {black} from './utils/colors'
+import DeckCreation from './components/DeckCreation'
+import DeckInfo from './components/DeckInfo'
+import AppStatusBar from "./components/AppStatusBar";
 
-function AppStatusBar({backgroundColor, ...props}) {
-    return (
-        <View style={{backgroundColor, height: Constants.statusBarHeight}}>
-            <StatusBar translucent backgroundColor={backgroundColor} {...props}/>
-        </View>
-    )
-}
 
 const Tabs = TabNavigator({
     Decks: {
@@ -22,7 +14,7 @@ const Tabs = TabNavigator({
             tabBarLabel: 'DECKS'
         }
     }, addDeck: {
-        screen: AddDeck,
+        screen: DeckCreation,
         navigationOptions: {
             tabBarLabel: 'ADD DECK'
         }
@@ -52,8 +44,8 @@ const MainNavigator = StackNavigator({
     Home: {
         screen: Tabs,
     },
-    SingleViewDeck: {
-        screen: SingleViewDeck,
+    DeckInfo: {
+        screen: DeckInfo,
     },
 })
 
@@ -61,7 +53,7 @@ export default class App extends React.Component {
     render() {
         return (
             <View style={{flex: 1}}>
-                <AppStatusBar backgroundColor={black} barStyle="light-content"/>
+                <AppStatusBar barStyle="light-content"/>
                 <MainNavigator/>
             </View>
         );

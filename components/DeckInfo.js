@@ -1,22 +1,28 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {View, Text} from 'react-native'
 import styled from "styled-components/native/index";
 
-export default function DeckInfo(props) {
-    return (
-        <ViewStyled>
-            <Title>{props.navigation.state.params.title}</Title>
-            <SubTitle>{props.navigation.state.params.subtitle}</SubTitle>
+class DeckInfo extends Component {
 
-            <TouchableOpacityStyledWhite>
-                <TextButtonBlack>Add Card</TextButtonBlack>
-            </TouchableOpacityStyledWhite>
+    render() {
 
-            <TouchableOpacityStyledBlack>
-                <TextButtonWhite>Start Quiz</TextButtonWhite>
-            </TouchableOpacityStyledBlack>
-        </ViewStyled>
-    )
+        const {title, subtitle} = this.props.navigation.state.params;
+
+        return (
+            <ViewStyled>
+                <Title>{title}</Title>
+                <SubTitle>{subtitle}</SubTitle>
+
+                <TouchableOpacityStyledWhite>
+                    <TextButtonBlack>Add Card</TextButtonBlack>
+                </TouchableOpacityStyledWhite>
+
+                <TouchableOpacityStyledBlack>
+                    <TextButtonWhite>Start Quiz</TextButtonWhite>
+                </TouchableOpacityStyledBlack>
+            </ViewStyled>
+        )
+    }
 }
 
 const ViewStyled = styled.View`
@@ -71,3 +77,4 @@ const TextButtonBlack = styled.Text`
     color: black;
 `
 
+export default DeckInfo

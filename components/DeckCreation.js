@@ -1,12 +1,25 @@
 import React, {Component} from 'react'
 import {View, Text, TextInput, TouchableOpacity} from 'react-native'
 import styled from "styled-components/native/index";
+import {submitEntry} from '../utils/api'
 
 class DeckCreation extends Component {
 
     constructor(props) {
         super(props);
         this.state = {text: ''};
+    }
+
+    createDeck = () => {
+        if(this.state.text.trim().length === 0){
+            return
+        }
+
+        submitEntry({title: this.state.text, questions: []}, this.state.text);
+
+        this.props.navigation.navigate('DeckInfo', {title: this.state.text, subtitle: '0 cards'})
+
+        this.setState({text: ''})
     }
 
     render() {
@@ -19,7 +32,7 @@ class DeckCreation extends Component {
                 </QuestionView>
                 <TextInputStyled onChangeText={(text) => this.setState({text})}
                                  value={this.state.text}></TextInputStyled>
-                <TouchableOpacityStyled>
+                <TouchableOpacityStyled onPress={() => this.createDeck()}>
                     <TextButton>SUBMIT</TextButton>
                 </TouchableOpacityStyled>
             </AddDeckStyled>

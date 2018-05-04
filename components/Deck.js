@@ -9,7 +9,7 @@ export default function Deck(props) {
 
     return (
         <DeckStyled>
-            <Title onPress={() => props.navigation.navigate('SingleViewDeck', {title: title, subtitle: cardQuantitiesLiteral})} >{title}</Title>
+            <Title onPress={() => props.navigation.navigate('DeckInfo', {title: title, subtitle: cardQuantitiesLiteral})} >{title}</Title>
             <Text>{cardQuantitiesLiteral}</Text>
         </DeckStyled>
     )

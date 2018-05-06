@@ -1,9 +1,8 @@
 import React from 'react';
+import Card from '../components/Card';
 import renderer from 'react-test-renderer';
-import DeckInfo from "../components/DeckInfo";
 
 it('renders correctly', () => {
-
     const state = {
         state: {
             params: {
@@ -24,7 +23,7 @@ it('renders correctly', () => {
         }
     };
 
-    const tree = renderer.create(<DeckInfo navigation={state}/>).toJSON();
+    const tree = renderer.create(<Card navigation={state}/>).toJSON();
 
     expect(tree).toMatchSnapshot();
 });

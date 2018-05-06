@@ -30,8 +30,7 @@ class Decks extends Component {
         return (
             <View>
                 {Object.keys(data).map((deck) => (
-                    <Deck key={deck} navigation={this.props.navigation} title={data[deck].title}
-                          quantity={data[deck].questions.length}></Deck>
+                    <Deck key={deck} navigation={this.props.navigation} deck={data[deck]}></Deck>
                 ))}
             </View>
         )

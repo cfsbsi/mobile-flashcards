@@ -4,6 +4,7 @@ import Decks from './components/Decks'
 import DeckCreation from './components/DeckCreation'
 import CardCreation from './components/CardCreation'
 import DeckInfo from './components/DeckInfo'
+import Card from "./components/Card";
 import AppStatusBar from "./components/AppStatusBar"
 import styled from "styled-components/native/index";
 
@@ -51,6 +52,10 @@ const MainNavigator = StackNavigator({
     CardCreation: {
         screen: CardCreation,
     },
+    Card: {
+        screen: Card,
+    },
+
 })
 
 export default class App extends React.Component {

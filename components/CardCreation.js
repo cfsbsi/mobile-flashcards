@@ -12,9 +12,10 @@ class CardCreation extends Component {
     }
 
     componentDidMount() {
-        const {title} = this.props.navigation.state.params;
+        const {deck} = this.props.navigation.state.params;
+
         fetchDecks()
-            .then((data) => this.setState({deck: data[title]}));
+            .then((data) => this.setState({deck: data[deck.title]}));
 
     }
 
@@ -41,8 +42,7 @@ class CardCreation extends Component {
         submitEntry({title: this.state.deck.title, questions: this.state.deck.questions}, this.state.deck.title);
 
         navigation.navigate('DeckInfo', {
-            title: this.state.deck.title,
-            cardsQuantity: this.state.deck.questions.length
+            deck: this.state.deck,
         });
 
         this.setState({question: '', answer: ''})
@@ -52,13 +52,13 @@ class CardCreation extends Component {
         return (
             <AddDeckStyled>
                 <View>
-                        <Question>Question</Question>
+                    <Question>Question</Question>
                     <TextInputStyled onChangeText={(question) => this.setState({question})}
                                      value={this.state.question}></TextInputStyled>
                 </View>
 
                 <View>
-                        <Question>Answer</Question>
+                    <Question>Answer</Question>
                     <TextInputStyled onChangeText={(answer) => this.setState({answer})}
                                      value={this.state.answer}></TextInputStyled>
                 </View>

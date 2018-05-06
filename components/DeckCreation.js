@@ -26,7 +26,7 @@ class DeckCreation extends Component {
 
         submitEntry({title: this.state.text, questions: []}, this.state.text);
 
-        this.props.navigation.navigate('DeckInfo', {title: this.state.text, cardsQuantity: 0})
+        this.props.navigation.navigate('DeckInfo', {deck: {title: this.state.text, questions: []}})
 
         this.setState({text: ''})
     }

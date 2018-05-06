@@ -4,12 +4,12 @@ import {cardQuantitiesLiteral} from '../utils/helpers'
 
 
 export default function Deck(props) {
-    const {quantity, title} = props;
+    const {deck} = props;
 
     return (
         <DeckStyled>
-            <Title onPress={() => props.navigation.navigate('DeckInfo', {title: title, cardsQuantity: quantity})} >{title}</Title>
-            <Subtitle>{cardQuantitiesLiteral(quantity)}</Subtitle>
+            <Title onPress={() => props.navigation.navigate('DeckInfo', {deck})} >{deck.title}</Title>
+            <Subtitle>{cardQuantitiesLiteral(deck.questions.length)}</Subtitle>
         </DeckStyled>
     )
 }

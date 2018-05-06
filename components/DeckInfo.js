@@ -7,22 +7,23 @@ class DeckInfo extends Component {
 
     render() {
 
-        const {title, cardsQuantity} = this.props.navigation.state.params;
+        const {deck} = this.props.navigation.state.params;
 
         return (
             <ViewStyled>
                 <View>
-                    <Title>{title}</Title>
-                    <SubTitle>{cardQuantitiesLiteral(cardsQuantity)}</SubTitle>
+                    <Title>{deck.title}</Title>
+                    <SubTitle>{cardQuantitiesLiteral(deck.questions.length)}</SubTitle>
                 </View>
                 <View>
                     <TouchableOpacityStyledWhite>
-                        <TextButtonBlack onPress={() => this.props.navigation.navigate('CardCreation', {title})}>Add
-                            Card</TextButtonBlack>
+                        <TextButtonBlack onPress={() => this.props.navigation.navigate('CardCreation', {deck})}>
+                            Add Card</TextButtonBlack>
                     </TouchableOpacityStyledWhite>
 
                     <TouchableOpacityStyledBlack>
-                        <TextButtonWhite>Start Quiz</TextButtonWhite>
+                        <TextButtonWhite onPress={() => this.props.navigation.navigate('Card', {deck})}>
+                            Start Quiz</TextButtonWhite>
                     </TouchableOpacityStyledBlack>
                 </View>
             </ViewStyled>

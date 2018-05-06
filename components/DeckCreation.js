@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {View} from 'react-native'
 import { NavigationActions } from 'react-navigation';
 import styled from "styled-components/native/index";
 import {submitEntry} from '../utils/api'
@@ -33,11 +34,11 @@ class DeckCreation extends Component {
     render() {
         return (
             <AddDeckStyled>
-                <QuestionView>
+                <View>
                     <Question>What is the title</Question>
                     <Question>of your new</Question>
                     <Question>deck?</Question>
-                </QuestionView>
+                </View>
                 <TextInputStyled onChangeText={(text) => this.setState({text})}
                                  value={this.state.text}></TextInputStyled>
                 <TouchableOpacityStyled onPress={() => this.createDeck()}>
@@ -51,15 +52,11 @@ class DeckCreation extends Component {
 
 const AddDeckStyled = styled.View`
     align-items: center;
-`
-
-const QuestionView = styled.View`
-    margin-top: 70;
-    margin-bottom: 20;
+    flex: 1;
+    justify-content: space-around;
 `
 
 const TextInputStyled = styled.TextInput`
-    margin-top: 40;
     height: 50;
     width: 300;
     border-color: gray;
@@ -82,7 +79,6 @@ const TextButton = styled.Text`
 const TouchableOpacityStyled = styled.TouchableOpacity`
     background-color: black;
     border-radius: 7;
-    margin-top: 80;
     padding: 10px 15px;
 `
 

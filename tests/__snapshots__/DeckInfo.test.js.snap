@@ -6,153 +6,157 @@ exports[`renders correctly 1`] = `
     Array [
       Object {
         "alignItems": "center",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "justifyContent": "space-around",
       },
       undefined,
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "fontSize": 30,
-          "fontWeight": "bold",
-          "marginTop": 80,
-          "textAlign": "center",
-        },
-        undefined,
-      ]
-    }
-  >
-    title
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "color": "gray",
-          "fontSize": 15,
-          "fontWeight": "bold",
-          "marginTop": 10,
-          "textAlign": "center",
-        },
-        undefined,
-      ]
-    }
-  >
-    1 card
-  </Text>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "white",
-        "borderColor": "black",
-        "borderRadius": 7,
-        "borderWidth": 2,
-        "marginTop": 80,
-        "opacity": 1,
-        "paddingBottom": 10,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 10,
-        "width": 200,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
+  <View>
     <Text
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
-      onPress={[Function]}
       style={
         Array [
           Object {
-            "color": "black",
-            "fontSize": 25,
+            "fontSize": 30,
+            "fontWeight": "bold",
             "textAlign": "center",
           },
           undefined,
         ]
       }
     >
-      Add Card
+      title
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "gray",
+            "fontSize": 15,
+            "fontWeight": "bold",
+            "marginTop": 10,
+            "textAlign": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      1 card
     </Text>
   </View>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "backgroundColor": "black",
-        "borderRadius": 7,
-        "marginTop": 15,
-        "opacity": 1,
-        "paddingBottom": 10,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 10,
-        "width": 200,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
-    <Text
+  <View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
       accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {
-            "color": "white",
-            "fontSize": 25,
-            "textAlign": "center",
-          },
-          undefined,
-        ]
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "black",
+          "borderRadius": 7,
+          "borderWidth": 2,
+          "opacity": 1,
+          "paddingBottom": 10,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 10,
+        }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
-      Start Quiz
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "color": "black",
+              "fontSize": 25,
+              "textAlign": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        Add Card
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "black",
+          "borderRadius": 7,
+          "marginTop": 15,
+          "opacity": 1,
+          "paddingBottom": 10,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 10,
+          "width": 200,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 25,
+              "textAlign": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        Start Quiz
+      </Text>
+    </View>
   </View>
 </View>
 `;

@@ -1,11 +1,11 @@
 import React from 'react'
-import {View} from 'react-native'
 import {TabNavigator, StackNavigator} from 'react-navigation'
 import Decks from './components/Decks'
 import DeckCreation from './components/DeckCreation'
 import CardCreation from './components/CardCreation'
 import DeckInfo from './components/DeckInfo'
 import AppStatusBar from "./components/AppStatusBar"
+import styled from "styled-components/native/index";
 
 
 const Tabs = TabNavigator({
@@ -56,10 +56,14 @@ const MainNavigator = StackNavigator({
 export default class App extends React.Component {
     render() {
         return (
-            <View style={{flex: 1}}>
+            <AppView>
                 <AppStatusBar barStyle="light-content"/>
                 <MainNavigator/>
-            </View>
+            </AppView>
         );
     }
 }
+
+const AppView = styled.View`
+    flex: 1;
+`

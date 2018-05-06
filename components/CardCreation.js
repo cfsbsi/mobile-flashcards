@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import { NavigationActions } from 'react-navigation';
-import styled from "styled-components/native/index";
+import {NavigationActions} from 'react-navigation'
+import {View} from 'react-native'
+import styled from "styled-components/native/index"
 import {submitEntry, fetchDecks} from '../utils/api'
 
 class CardCreation extends Component {
@@ -11,7 +12,7 @@ class CardCreation extends Component {
     }
 
     componentDidMount() {
-        const { title } = this.props.navigation.state.params;
+        const {title} = this.props.navigation.state.params;
         fetchDecks()
             .then((data) => this.setState({deck: data[title]}));
 
@@ -27,7 +28,7 @@ class CardCreation extends Component {
         const resetAction = NavigationActions.reset({
             index: 0,
             actions: [
-                NavigationActions.navigate({ routeName: 'Home' }),
+                NavigationActions.navigate({routeName: 'Home'}),
             ],
         });
 
@@ -39,7 +40,10 @@ class CardCreation extends Component {
 
         submitEntry({title: this.state.deck.title, questions: this.state.deck.questions}, this.state.deck.title);
 
-        navigation.navigate('DeckInfo', {title: this.state.deck.title, cardsQuantity: this.state.deck.questions.length});
+        navigation.navigate('DeckInfo', {
+            title: this.state.deck.title,
+            cardsQuantity: this.state.deck.questions.length
+        });
 
         this.setState({question: '', answer: ''})
     }
@@ -47,17 +51,17 @@ class CardCreation extends Component {
     render() {
         return (
             <AddDeckStyled>
-                <QuestionView>
-                    <Question>Question</Question>
-                </QuestionView>
-                <TextInputStyled onChangeText={(question) => this.setState({question})}
-                                 value={this.state.question}></TextInputStyled>
+                <View>
+                        <Question>Question</Question>
+                    <TextInputStyled onChangeText={(question) => this.setState({question})}
+                                     value={this.state.question}></TextInputStyled>
+                </View>
 
-                <QuestionView>
-                    <Question>Answer</Question>
-                </QuestionView>
-                <TextInputStyled onChangeText={(answer) => this.setState({answer})}
-                                 value={this.state.answer}></TextInputStyled>
+                <View>
+                        <Question>Answer</Question>
+                    <TextInputStyled onChangeText={(answer) => this.setState({answer})}
+                                     value={this.state.answer}></TextInputStyled>
+                </View>
 
                 <TouchableOpacityStyled>
                     <TextButton onPress={() => this.createCard()}>SUBMIT</TextButton>
@@ -70,6 +74,8 @@ class CardCreation extends Component {
 
 const AddDeckStyled = styled.View`
     align-items: center;
+    flex: 1;
+    justify-content: space-around;
 `
 
 const QuestionView = styled.View`
@@ -100,7 +106,6 @@ const TextButton = styled.Text`
 const TouchableOpacityStyled = styled.TouchableOpacity`
     background-color: black;
     border-radius: 7;
-    margin-top: 60;
     padding: 10px 15px;
 `
 

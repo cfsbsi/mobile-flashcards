@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {View} from 'react-native'
 import styled from "styled-components/native/index";
 import {cardQuantitiesLiteral} from '../utils/helpers'
 
@@ -10,23 +11,29 @@ class DeckInfo extends Component {
 
         return (
             <ViewStyled>
-                <Title>{title}</Title>
-                <SubTitle>{cardQuantitiesLiteral(cardsQuantity)}</SubTitle>
+                <View>
+                    <Title>{title}</Title>
+                    <SubTitle>{cardQuantitiesLiteral(cardsQuantity)}</SubTitle>
+                </View>
+                <View>
+                    <TouchableOpacityStyledWhite>
+                        <TextButtonBlack onPress={() => this.props.navigation.navigate('CardCreation', {title})}>Add
+                            Card</TextButtonBlack>
+                    </TouchableOpacityStyledWhite>
 
-                <TouchableOpacityStyledWhite>
-                    <TextButtonBlack onPress={() => this.props.navigation.navigate('CardCreation', {title})}>Add Card</TextButtonBlack>
-                </TouchableOpacityStyledWhite>
-
-                <TouchableOpacityStyledBlack>
-                    <TextButtonWhite>Start Quiz</TextButtonWhite>
-                </TouchableOpacityStyledBlack>
+                    <TouchableOpacityStyledBlack>
+                        <TextButtonWhite>Start Quiz</TextButtonWhite>
+                    </TouchableOpacityStyledBlack>
+                </View>
             </ViewStyled>
         )
     }
 }
 
 const ViewStyled = styled.View`
- align-items: center;
+    align-items: center;
+    flex: 1;
+    justify-content: space-around;
 `
 
 
@@ -34,7 +41,6 @@ const Title = styled.Text`
     font-size: 30;
     font-weight: bold;
     text-align: center;
-    margin-top: 80;
 `
 
 const SubTitle = styled.Text`
@@ -59,10 +65,7 @@ const TouchableOpacityStyledWhite = styled.TouchableOpacity`
     border-radius: 7;
     border-width: 2px;
     border-color: black;
-    margin-top: 80;
     padding: 10px 15px;
-    width: 200;
-    align-items: center;
 `
 
 const TextButtonWhite = styled.Text`

@@ -6,22 +6,16 @@ exports[`renders correctly 1`] = `
     Array [
       Object {
         "alignItems": "center",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "justifyContent": "space-around",
       },
       undefined,
     ]
   }
 >
-  <View
-    style={
-      Array [
-        Object {
-          "marginBottom": 20,
-          "marginTop": 60,
-        },
-        undefined,
-      ]
-    }
-  >
+  <View>
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -39,35 +33,25 @@ exports[`renders correctly 1`] = `
     >
       Question
     </Text>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      style={
+        Array [
+          Object {
+            "borderColor": "gray",
+            "borderRadius": 7,
+            "borderWidth": 2,
+            "height": 50,
+            "width": 300,
+          },
+          undefined,
+        ]
+      }
+      value=""
+    />
   </View>
-  <TextInput
-    allowFontScaling={true}
-    onChangeText={[Function]}
-    style={
-      Array [
-        Object {
-          "borderColor": "gray",
-          "borderRadius": 7,
-          "borderWidth": 2,
-          "height": 50,
-          "width": 300,
-        },
-        undefined,
-      ]
-    }
-    value=""
-  />
-  <View
-    style={
-      Array [
-        Object {
-          "marginBottom": 20,
-          "marginTop": 60,
-        },
-        undefined,
-      ]
-    }
-  >
+  <View>
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -85,24 +69,24 @@ exports[`renders correctly 1`] = `
     >
       Answer
     </Text>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      style={
+        Array [
+          Object {
+            "borderColor": "gray",
+            "borderRadius": 7,
+            "borderWidth": 2,
+            "height": 50,
+            "width": 300,
+          },
+          undefined,
+        ]
+      }
+      value=""
+    />
   </View>
-  <TextInput
-    allowFontScaling={true}
-    onChangeText={[Function]}
-    style={
-      Array [
-        Object {
-          "borderColor": "gray",
-          "borderRadius": 7,
-          "borderWidth": 2,
-          "height": 50,
-          "width": 300,
-        },
-        undefined,
-      ]
-    }
-    value=""
-  />
   <View
     accessibilityComponentType={undefined}
     accessibilityLabel={undefined}
@@ -124,7 +108,6 @@ exports[`renders correctly 1`] = `
       Object {
         "backgroundColor": "black",
         "borderRadius": 7,
-        "marginTop": 60,
         "opacity": 1,
         "paddingBottom": 10,
         "paddingLeft": 15,

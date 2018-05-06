@@ -11,98 +11,98 @@ exports[`renders correctly 1`] = `
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "fontSize": 30,
-          "fontWeight": "bold",
-          "marginTop": 80,
-          "textAlign": "center",
-        },
-        undefined,
-      ]
-    }
-  >
-    title
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "color": "gray",
-          "fontSize": 15,
-          "fontWeight": "bold",
-          "marginTop": 10,
-          "textAlign": "center",
-        },
-        undefined,
-      ]
-    }
-  >
-    1 card
-  </Text>
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "white",
-        "borderColor": "black",
-        "borderRadius": 7,
-        "borderWidth": 2,
-        "marginTop": 80,
-        "opacity": 1,
-        "paddingBottom": 10,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 10,
-        "width": 200,
-      }
+      Array [
+        Object {
+          "marginBottom": 20,
+          "marginTop": 60,
+        },
+        undefined,
+      ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <Text
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
-      onPress={[Function]}
       style={
         Array [
           Object {
-            "color": "black",
-            "fontSize": 25,
+            "fontSize": 30,
+            "fontWeight": "bold",
             "textAlign": "center",
           },
           undefined,
         ]
       }
     >
-      Add Card
+      Question
     </Text>
   </View>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    style={
+      Array [
+        Object {
+          "borderColor": "gray",
+          "borderRadius": 7,
+          "borderWidth": 2,
+          "height": 50,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+    value=""
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "marginBottom": 20,
+          "marginTop": 60,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 30,
+            "fontWeight": "bold",
+            "textAlign": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      Answer
+    </Text>
+  </View>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    style={
+      Array [
+        Object {
+          "borderColor": "gray",
+          "borderRadius": 7,
+          "borderWidth": 2,
+          "height": 50,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+    value=""
+  />
   <View
     accessibilityComponentType={undefined}
     accessibilityLabel={undefined}
@@ -124,13 +124,12 @@ exports[`renders correctly 1`] = `
       Object {
         "backgroundColor": "black",
         "borderRadius": 7,
-        "marginTop": 15,
+        "marginTop": 60,
         "opacity": 1,
         "paddingBottom": 10,
         "paddingLeft": 15,
         "paddingRight": 15,
         "paddingTop": 10,
-        "width": 200,
       }
     }
     testID={undefined}
@@ -140,18 +139,19 @@ exports[`renders correctly 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      onPress={[Function]}
       style={
         Array [
           Object {
             "color": "white",
-            "fontSize": 25,
+            "fontSize": 30,
             "textAlign": "center",
           },
           undefined,
         ]
       }
     >
-      Start Quiz
+      SUBMIT
     </Text>
   </View>
 </View>

@@ -3,8 +3,9 @@ import {View} from 'react-native'
 import {TabNavigator, StackNavigator} from 'react-navigation'
 import Decks from './components/Decks'
 import DeckCreation from './components/DeckCreation'
+import CardCreation from './components/CardCreation'
 import DeckInfo from './components/DeckInfo'
-import AppStatusBar from "./components/AppStatusBar";
+import AppStatusBar from "./components/AppStatusBar"
 
 
 const Tabs = TabNavigator({
@@ -46,6 +47,9 @@ const MainNavigator = StackNavigator({
     },
     DeckInfo: {
         screen: DeckInfo,
+    },
+    CardCreation: {
+        screen: CardCreation,
     },
 })
 

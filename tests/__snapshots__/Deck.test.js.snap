@@ -34,6 +34,15 @@ exports[`renders correctly 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "gray",
+          "fontWeight": "bold",
+        },
+        undefined,
+      ]
+    }
   >
     1 card
   </Text>

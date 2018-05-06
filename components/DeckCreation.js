@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, TextInput, TouchableOpacity} from 'react-native'
+import { NavigationActions } from 'react-navigation';
 import styled from "styled-components/native/index";
 import {submitEntry} from '../utils/api'
 
@@ -15,9 +15,17 @@ class DeckCreation extends Component {
             return
         }
 
+        const resetAction = NavigationActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({ routeName: 'Home' }),
+            ],
+        });
+        this.props.navigation.dispatch(resetAction);
+
         submitEntry({title: this.state.text, questions: []}, this.state.text);
 
-        this.props.navigation.navigate('DeckInfo', {title: this.state.text, subtitle: '0 cards'})
+        this.props.navigation.navigate('DeckInfo', {title: this.state.text, cardsQuantity: 0})
 
         this.setState({text: ''})
     }

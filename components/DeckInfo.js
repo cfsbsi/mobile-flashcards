@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native'
 import styled from "styled-components/native/index";
+import {cardQuantitiesLiteral} from '../utils/helpers'
 
 class DeckInfo extends Component {
 
     render() {
 
-        const {title, subtitle} = this.props.navigation.state.params;
+        const {title, cardsQuantity} = this.props.navigation.state.params;
 
         return (
             <ViewStyled>
                 <Title>{title}</Title>
-                <SubTitle>{subtitle}</SubTitle>
+                <SubTitle>{cardQuantitiesLiteral(cardsQuantity)}</SubTitle>
 
                 <TouchableOpacityStyledWhite>
-                    <TextButtonBlack>Add Card</TextButtonBlack>
+                    <TextButtonBlack onPress={() => this.props.navigation.navigate('CardCreation', {title})}>Add Card</TextButtonBlack>
                 </TouchableOpacityStyledWhite>
 
                 <TouchableOpacityStyledBlack>

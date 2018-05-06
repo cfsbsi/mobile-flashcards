@@ -1,16 +1,15 @@
 import React from 'react'
-import {View, Text} from 'react-native'
 import styled from 'styled-components/native';
+import {cardQuantitiesLiteral} from '../utils/helpers'
 
 
 export default function Deck(props) {
     const {quantity, title} = props;
-    const cardQuantitiesLiteral = `${quantity} ${quantity===1?'card':'cards'}`;
 
     return (
         <DeckStyled>
-            <Title onPress={() => props.navigation.navigate('DeckInfo', {title: title, subtitle: cardQuantitiesLiteral})} >{title}</Title>
-            <Text>{cardQuantitiesLiteral}</Text>
+            <Title onPress={() => props.navigation.navigate('DeckInfo', {title: title, cardsQuantity: quantity})} >{title}</Title>
+            <Subtitle>{cardQuantitiesLiteral(quantity)}</Subtitle>
         </DeckStyled>
     )
 }
@@ -27,4 +26,11 @@ const Title = styled.Text`
     font-size: 30;
     font-weight: bold;
 `
+
+
+const Subtitle = styled.Text`
+    font-weight: bold;
+    color: gray;
+`
+
 

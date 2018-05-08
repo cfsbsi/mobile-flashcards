@@ -18,16 +18,19 @@ exports[`renders correctly 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    collapsable={undefined}
     ellipsizeMode="tail"
     onPress={[Function]}
     style={
-      Array [
-        Object {
-          "fontSize": 30,
-          "fontWeight": "bold",
-        },
-        undefined,
-      ]
+      Object {
+        "fontSize": 30,
+        "fontWeight": "bold",
+        "transform": Array [
+          Object {
+            "scale": 1,
+          },
+        ],
+      }
     }
   >
     React

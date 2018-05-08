@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text} from 'react-native'
+import {ScrollView} from 'react-native'
 import Deck from './Deck'
 import {fetchDecks} from '../utils/api'
 import styled from "styled-components/native/index";
@@ -28,11 +28,11 @@ class Decks extends Component {
             )
         }
         return (
-            <View>
+            <ScrollView>
                 {Object.keys(data).map((deck) => (
                     <Deck key={deck} navigation={this.props.navigation} deck={data[deck]}></Deck>
                 ))}
-            </View>
+            </ScrollView>
         )
     }
 }

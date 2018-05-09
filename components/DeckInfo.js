@@ -1,9 +1,23 @@
 import React, {Component} from 'react';
-import {View} from 'react-native'
+import {View, Alert} from 'react-native'
 import styled from "styled-components/native/index";
 import {cardQuantitiesLiteral} from '../utils/helpers'
 
 class DeckInfo extends Component {
+
+    startQuiz = () => {
+        const {deck} = this.props.navigation.state.params;
+
+        if (deck.questions.length > 0) {
+            this.props.navigation.navigate('Card', {deck})
+        } else {
+            Alert.alert(
+                'Empty Deck',
+                'Please create a card before start the Quiz',
+                [{text: 'OK'}]
+            )
+        }
+    }
 
     render() {
 
@@ -22,7 +36,7 @@ class DeckInfo extends Component {
                     </TouchableOpacityStyledWhite>
 
                     <TouchableOpacityStyledBlack>
-                        <TextButtonWhite onPress={() => this.props.navigation.navigate('Card', {deck})}>
+                        <TextButtonWhite onPress={() => this.startQuiz()}>
                             Start Quiz</TextButtonWhite>
                     </TouchableOpacityStyledBlack>
                 </View>

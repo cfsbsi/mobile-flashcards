@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View} from 'react-native'
+import {Alert, View} from 'react-native'
 import { NavigationActions } from 'react-navigation';
 import styled from "styled-components/native/index";
 import {submitEntry} from '../utils/api'
@@ -13,6 +13,11 @@ class DeckCreation extends Component {
 
     createDeck = () => {
         if(this.state.text.trim().length === 0){
+            Alert.alert(
+                'Missing Fields',
+                'Please fill the deck title',
+                [{text: 'OK'}]
+            )
             return
         }
 

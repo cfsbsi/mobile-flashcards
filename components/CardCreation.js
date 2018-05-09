@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {NavigationActions} from 'react-navigation'
-import {View} from 'react-native'
+import {Alert, View} from 'react-native'
 import styled from "styled-components/native/index"
 import {submitEntry, fetchDecks} from '../utils/api'
 
@@ -21,6 +21,11 @@ class CardCreation extends Component {
 
     createCard = () => {
         if (this.state.question.trim().length === 0 || this.state.answer.trim().length === 0) {
+            Alert.alert(
+                'Missing fields',
+                'Please fill the missing fields',
+                [{text: 'OK'}]
+            )
             return
         }
 

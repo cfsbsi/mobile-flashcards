@@ -1,12 +1,58 @@
 import React, {Component} from 'react'
 import {View} from 'react-native'
-import styled from "styled-components/native/index"
+import {AppLoading} from 'expo'
+import {NavigationActions} from 'react-navigation'
+import styled from 'styled-components/native/index'
 
 class Card extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {index: 0, screen: 'Answer', disabledButtons: true};
+        this.state = {
+            index: 0,
+            screen: 'Answer',
+            disabledButtons: true,
+            rightAnswers: 0,
+            deckLength: props.navigation.state.params.deck.questions.length
+        };
+    }
+
+    correctAnswer = () => {
+        this.setState((prev) => {
+            return {
+                rightAnswers: prev.rightAnswers + 1,
+                index: prev.index + 1,
+                screen: 'Answer',
+                disabledButtons: true,
+            }
+        }, () => this.sendToResultIfDone())
+    }
+
+    sendToResultIfDone = () => {
+        const {index, rightAnswers, deckLength} = this.state;
+
+        if (index === deckLength) {
+            const resetAction = NavigationActions.reset({
+                index: 0,
+                actions: [
+                    NavigationActions.navigate({routeName: 'Home'}),
+                ],
+            });
+
+            this.props.navigation.dispatch(resetAction);
+
+            this.props.navigation.navigate('Result', {correctPercent: Math.floor(rightAnswers / deckLength * 100)})
+        }
+    }
+
+    incorrectAnswer = () => {
+        this.setState((prev) => {
+            return {
+                index: prev.index + 1,
+                screen: 'Answer',
+                disabledButtons: true,
+            }
+        }, () => this.sendToResultIfDone())
     }
 
     showAnswer = () => {
@@ -20,40 +66,51 @@ class Card extends Component {
     render() {
 
         const {deck} = this.props.navigation.state.params;
-        const {index, screen} = this.state;
+        const {index, screen, deckLength} = this.state;
+
+        if (index + 1 > deckLength) {
+            return (<AppLoading/>)
+        }
 
         return (
             <MainView>
                 <PageMaker>{this.state.index + 1}/{deck.questions.length}</PageMaker>
-            <ScreenView>
-                <View>
-                    {this.state.disabledButtons?
-                        (<QuestionAndAnswer>{deck.questions[index].question}</QuestionAndAnswer>):
-                        (<QuestionAndAnswer>{deck.questions[index].answer}</QuestionAndAnswer>)
-                    }
-                    <ViewAnswer onPress={() => this.state.disabledButtons?this.showAnswer():this.showQuestion()}>{screen}</ViewAnswer>
-                </View>
+                <ScreenView>
+                    <View>
+                        {this.state.disabledButtons ?
+                            (<QuestionAndAnswer>{deck.questions[index].question}</QuestionAndAnswer>) :
+                            (<QuestionAndAnswer>{deck.questions[index].answer}</QuestionAndAnswer>)
+                        }
+                        <ViewAnswer
+                            onPress={() => this.state.disabledButtons ?
+                                this.showAnswer() :
+                                this.showQuestion()}>{screen}</ViewAnswer>
+                    </View>
 
-                <View>
-                    {this.state.disabledButtons?
-                        (
-                            <GreenDisabledButton disabled={true}><TextButton>Correct</TextButton></GreenDisabledButton>
-                        ):
-                        (
-                            <GreenButton><TextButton>Correct</TextButton></GreenButton>
-                        )
-                    }
+                    <View>
+                        {this.state.disabledButtons ?
+                            (
+                                <GreenDisabledButton
+                                    disabled={true}><TextButton>Correct</TextButton></GreenDisabledButton>
+                            ) :
+                            (
+                                <GreenButton
+                                    onPress={() => this.correctAnswer()}><TextButton>Correct</TextButton></GreenButton>
+                            )
+                        }
 
-                    {this.state.disabledButtons?
-                        (
-                            <RedDisabledButton disabled={true}><TextButton>Incorrect</TextButton></RedDisabledButton>
-                        ):
-                        (
-                            <RedButton><TextButton>Incorrect</TextButton></RedButton>
-                        )
-                    }
-                </View>
-            </ScreenView>
+                        {this.state.disabledButtons ?
+                            (
+                                <RedDisabledButton
+                                    disabled={true}><TextButton>Incorrect</TextButton></RedDisabledButton>
+                            ) :
+                            (
+                                <RedButton
+                                    onPress={() => this.incorrectAnswer()}><TextButton>Incorrect</TextButton></RedButton>
+                            )
+                        }
+                    </View>
+                </ScreenView>
             </MainView>
         )
     }

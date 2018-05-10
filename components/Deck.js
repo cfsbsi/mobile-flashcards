@@ -30,7 +30,8 @@ export default class Deck extends Component {
 
         return (
             <DeckStyled>
-                <Animated.Text style={[{fontWeight: 'bold', fontSize: 30}, {transform: [{scale: this.state.fontSize}]}]} onPress={() => this.titlePressed()}>{deck.title}</Animated.Text>
+                <Animated.Text style={[{fontWeight: 'bold', fontSize: 30}, {transform: [{scale: this.state.fontSize}]}]}
+                               onPress={() => this.titlePressed()}>{deck.title}</Animated.Text>
                 <Subtitle>{cardQuantitiesLiteral(deck.questions.length)}</Subtitle>
             </DeckStyled>
         )

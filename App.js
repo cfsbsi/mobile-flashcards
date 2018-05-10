@@ -5,6 +5,7 @@ import DeckCreation from './components/DeckCreation'
 import CardCreation from './components/CardCreation'
 import DeckInfo from './components/DeckInfo'
 import Card from "./components/Card";
+import Result from "./components/Result";
 import AppStatusBar from "./components/AppStatusBar"
 import styled from "styled-components/native/index";
 
@@ -54,6 +55,9 @@ const MainNavigator = StackNavigator({
     },
     Card: {
         screen: Card,
+    },
+    Result: {
+        screen: Result,
     },
 
 })

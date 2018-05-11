@@ -1,2 +1,2 @@
 
-export const DECKS_STORAGE_KEY = 'Flashcards:decks'
+export const DECKS_STORAGE_KEY = 'Flashcards:decks';

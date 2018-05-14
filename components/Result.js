@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/native/index';
+import { clearLocalNotification, setLocalNotification } from '../utils/helpers';
 
 export default function Result(props) {
+  clearLocalNotification().then(setLocalNotification);
+
   return (
     <MainView>
       <TextStyled>You accepted {props.navigation.state.params.correctPercent}%</TextStyled>

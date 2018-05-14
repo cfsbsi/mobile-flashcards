@@ -8,6 +8,7 @@ import Card from './components/Card';
 import Result from './components/Result';
 import AppStatusBar from './components/AppStatusBar';
 import styled from 'styled-components/native/index';
+import { setLocalNotification } from './utils/helpers';
 
 
 const Tabs = TabNavigator({
@@ -64,6 +65,10 @@ const MainNavigator = StackNavigator({
 });
 
 export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification();
+  }
+
   render() {
     return (
       <AppView>

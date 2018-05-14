@@ -25,7 +25,10 @@
     "lint-fix": "eslint '**/*.js' --fix"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react|@expo|expo)"
+    ]
   },
   "dependencies": {
     "expo": "^26.0.0",

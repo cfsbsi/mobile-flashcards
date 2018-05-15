@@ -51,15 +51,43 @@ const MainNavigator = StackNavigator({
   },
   DeckInfo: {
     screen: DeckInfo,
+    navigationOptions: {
+      title: 'Deck',
+      headerTintColor: '#fff',
+      headerStyle: {
+        backgroundColor: '#000',
+      },
+    },
   },
   CardCreation: {
     screen: CardCreation,
+    navigationOptions: {
+      title: 'Create Card',
+      headerTintColor: '#fff',
+      headerStyle: {
+        backgroundColor: '#000',
+      },
+    },
   },
   Card: {
     screen: Card,
+    navigationOptions: {
+      title: 'Quiz',
+      headerTintColor: '#fff',
+      headerStyle: {
+        backgroundColor: '#000',
+      },
+    },
   },
   Result: {
     screen: Result,
+    navigationOptions: {
+      title: 'Your Result',
+      headerTintColor: '#fff',
+      headerStyle: {
+        backgroundColor: '#000',
+      },
+    },
   },
 
 });

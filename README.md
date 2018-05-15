@@ -32,6 +32,11 @@ Use to run all tests
 npm run test
 ```
 
+## Production tests
+
+The app was tested in Iphone X 11.3 emulator and also in Iphone 7 11.3 physically. 
+
+
 ## Authors
 
 * **Christian Franco Soares** 

@@ -66,7 +66,6 @@ const SubTitle = styled.Text`
     margin-top: 10;
 `
 
-
 const TouchableOpacityStyledBlack = styled.TouchableOpacity`
     background-color: black;
     border-radius: 7;

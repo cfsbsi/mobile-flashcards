@@ -41,7 +41,8 @@ class Card extends Component {
 
             this.props.navigation.dispatch(resetAction);
 
-            this.props.navigation.navigate('Result', {correctPercent: Math.floor(rightAnswers / deckLength * 100)})
+            this.props.navigation.navigate('Result', {correctPercent: Math.floor(rightAnswers / deckLength * 100),
+            deck: this.props.navigation.state.params.deck})
         }
     }
 
